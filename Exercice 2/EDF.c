@@ -8,14 +8,14 @@ typedef struct {
     int remaining_time;
     int deadline;
     int period;
-    int next_deadline;  // L'échéance absolue (dynamique)
+    int next_deadline;  
 } Task;
 
 // Fonction de comparaison pour trier par échéance (pour EDF)
 int compare_edf(const void *a, const void *b) {
     Task *taskA = (Task *)a;
     Task *taskB = (Task *)b;
-    return taskA->next_deadline - taskB->next_deadline;  // Tri croissant par échéance
+    return taskA->next_deadline - taskB->next_deadline;  
 }
 
 // Fonction pour simuler l'ordonnancement EDF
@@ -23,7 +23,7 @@ void schedule_edf(Task tasks[], int n, int total_time) {
     int current_time = 0;
 
     while (current_time < total_time) {
-        // Trier les tâches en fonction de leur échéance absolue (EDF)
+        
         qsort(tasks, n, sizeof(Task), compare_edf);
 
         // Trouver la prochaine tâche à exécuter
@@ -60,14 +60,14 @@ void schedule_edf(Task tasks[], int n, int total_time) {
 int main() {
     int n, total_time;
 
-    // Demander à l'utilisateur le nombre de tâches
+    
     printf("Entrez le nombre de tâches : ");
     scanf("%d", &n);
 
-    // Allouer dynamiquement de la mémoire pour les tâches
+    
     Task *tasks = (Task *)malloc(n * sizeof(Task));
 
-    // Entrer les informations pour chaque tâche (une seule fois)
+    
     for (int i = 0; i < n; i++) {
         tasks[i].id = i + 1;
         printf("\nTâche %d :\n", tasks[i].id);
@@ -81,14 +81,14 @@ int main() {
         scanf("%d", &tasks[i].period);
     }
 
-    // Demander la durée totale de simulation
+   
     printf("\nEntrez le temps total de simulation : ");
     scanf("%d", &total_time);
 
     // Simuler l'ordonnancement EDF
     schedule_edf(tasks, n, total_time);
 
-    // Libérer la mémoire allouée
+   
     free(tasks);
 
     return 0;
