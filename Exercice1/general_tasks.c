@@ -13,7 +13,7 @@ typedef struct {
 int compare_priority(const void *a, const void *b) {
     Task *taskA = (Task *)a;
     Task *taskB = (Task *)b;
-    return taskB->priority - taskA->priority; // Tri décroissant (tâches avec priorités élevées en premier)
+    return taskB->priority - taskA->priority; 
 }
 
 
@@ -36,11 +36,11 @@ int is_schedulable(Task tasks[], int n) {
 int main() {
     int n;
 
-    // Demander à l'utilisateur le nombre de tâches
+    
     printf("Entrez le nombre de tâches : ");
     scanf("%d", &n);
 
-    // Allouer dynamiquement de la mémoire pour les tâches
+    
     Task *tasks = (Task *)malloc(n * sizeof(Task));
 
     // Entrer les informations pour chaque tâche

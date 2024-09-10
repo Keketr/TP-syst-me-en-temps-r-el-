@@ -13,21 +13,21 @@ typedef struct {
 int compare_priority(const void *a, const void *b) {
     Task *taskA = (Task *)a;
     Task *taskB = (Task *)b;
-    return taskB->priority - taskA->priority; // Tri décroissant (priorité haute d'abord)
+    return taskB->priority - taskA->priority; 
 }
 
 // Fonction de comparaison pour trier par période (RM - Rate Monotonic)
 int compare_rm(const void *a, const void *b) {
     Task *taskA = (Task *)a;
     Task *taskB = (Task *)b;
-    return taskA->period - taskB->period; // Tri croissant (période courte d'abord)
+    return taskA->period - taskB->period; 
 }
 
 // Fonction de comparaison pour trier par échéance (DM - Deadline Monotonic)
 int compare_dm(const void *a, const void *b) {
     Task *taskA = (Task *)a;
     Task *taskB = (Task *)b;
-    return taskA->deadline - taskB->deadline; // Tri croissant (échéance courte d'abord)
+    return taskA->deadline - taskB->deadline; 
 }
 
 // Fonction pour vérifier la faisabilité des tâches
@@ -39,7 +39,7 @@ int is_schedulable(Task tasks[], int n) {
         utilization += (float)tasks[i].execution_time / tasks[i].period;
     }
 
-    // Condition de faisabilité basée sur l'utilisation (limite de 100%)
+    // limite à 100%
     if (utilization <= 1.0) {
         return 1; 
     } else {
