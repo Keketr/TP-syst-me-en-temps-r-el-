@@ -1,5 +1,5 @@
 #include <stdio.h>
-// Dans cette exemple, les tâches sont ordonnnancé dans l'ordre des priorité statique.
+
 // Structure d'une tâche 
 typedef struct {
     int execution_time;
