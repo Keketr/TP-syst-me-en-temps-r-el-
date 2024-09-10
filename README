@@ -1,5 +1,9 @@
-Nous n'avons pas fait d'optimisation. L'application va vérifier chaque intervalle de temps pour les tâches. 
+//Nous n'avons pas fait d'optimisation. L'application va vérifier chaque intervalle de temps pour les tâches. 
 
-SI ON A LE TEMPS, ON OPTIMISE LE CODE, SINON C'EST PAS GRAVE
+//SI ON A LE TEMPS, ON OPTIMISE LE CODE, SINON C'EST PAS GRAVE
 
-C'est un peu plus dur en mettant un évènement à check.
+//C'est un peu plus dur en mettant un évènement à check.
+
+//Btw si t'as oublié comment run un fichier C sur le bash : 
+// gcc schedulability.c -o schedulability
+//./schedulability
